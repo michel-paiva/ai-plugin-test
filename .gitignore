@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+
+# Written by `claude plugin eval`, not source
+evals/results/
+evals/report.html
+returnista-plugin.zip

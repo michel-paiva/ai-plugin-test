@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "returnista": {
+      "type": "http",
+      "url": "https://mcp.returnista.com/mcp"
+    }
+  }
+}

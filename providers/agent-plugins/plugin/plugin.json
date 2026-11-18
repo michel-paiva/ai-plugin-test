@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "returnista",
+  "version": "0.1.0",
+  "description": "Ask about your returns in plain language: return reasons, sizing and fit, refunds, exchanges and store credit, per Store and period, using your Returnista account.",
+  "author": {
+    "name": "Returnista",
+    "url": "https://www.returnista.com"
+  },
+  "homepage": "https://github.com/returnista/ai-plugin",
+  "repository": "https://github.com/returnista/ai-plugin",
+  "license": "MIT",
+  "keywords": [
+    "returns",
+    "ecommerce",
+    "returnista",
+    "analytics"
+  ]
+}

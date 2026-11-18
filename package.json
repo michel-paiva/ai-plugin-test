@@ -1,0 +1,12 @@
+{
+  "name": "returnista-ai-plugin",
+  "private": true,
+  "description": "Build scripts for the Returnista AI plugin. The plugin's version lives in plugin.config.json.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "generate": "node ci/generate-providers.mjs",
+    "validate": "node ci/validate-structure.mjs",
+    "check": "node ci/generate-providers.mjs --check && node ci/validate-structure.mjs"
+  }
+}

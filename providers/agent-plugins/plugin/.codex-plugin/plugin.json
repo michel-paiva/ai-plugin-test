@@ -1,0 +1,44 @@
+{
+  "name": "returnista",
+  "version": "0.1.0",
+  "description": "Ask about your returns in plain language: return reasons, sizing and fit, refunds, exchanges and store credit, per Store and period, using your Returnista account.",
+  "author": {
+    "name": "Returnista",
+    "url": "https://www.returnista.com"
+  },
+  "homepage": "https://github.com/returnista/ai-plugin",
+  "repository": "https://github.com/returnista/ai-plugin",
+  "license": "MIT",
+  "keywords": [
+    "returns",
+    "ecommerce",
+    "returnista",
+    "analytics"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json",
+  "interface": {
+    "displayName": "Returnista",
+    "shortDescription": "Answer questions about your returns",
+    "longDescription": "Ask about your returns in plain language: return reasons, sizing and fit, refunds, exchanges and store credit, per Store and period, using your Returnista account.",
+    "developerName": "Returnista",
+    "category": "Productivity",
+    "capabilities": [
+      "Answer questions about returns",
+      "Return reasons and sizing",
+      "Store return policies"
+    ],
+    "defaultPrompt": [
+      "Give me an overview of last week's returns per Store",
+      "What are the top return reasons per category this month?",
+      "Which products run small or large, and in which sizes?"
+    ],
+    "brandColor": "#8446E9",
+    "logo": "./assets/icon.png",
+    "composerIcon": "./assets/icon.png",
+    "websiteURL": "https://www.returnista.com",
+    "supportURL": "https://www.returnista.nl/en/contact",
+    "privacyPolicyURL": "https://www.returnista.nl/en/privacy",
+    "termsOfServiceURL": "https://www.returnista.nl/en/terms-and-conditions"
+  }
+}

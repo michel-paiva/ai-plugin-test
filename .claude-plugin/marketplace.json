@@ -1,0 +1,20 @@
+{
+  "name": "returnista",
+  "owner": {
+    "name": "Returnista",
+    "url": "https://www.returnista.com"
+  },
+  "description": "Returnista plugins for Claude",
+  "plugins": [
+    {
+      "name": "returnista",
+      "source": "./providers/claude/plugin",
+      "description": "Ask about your returns in plain language: return reasons, sizing and fit, refunds, exchanges and store credit, per Store and period, using your Returnista account.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Returnista",
+        "url": "https://www.returnista.com"
+      }
+    }
+  ]
+}

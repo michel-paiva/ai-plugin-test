@@ -1,0 +1,28 @@
+{
+  "name": "returnista",
+  "displayName": "Returnista",
+  "version": "0.1.0",
+  "description": "Ask about your returns in plain language: return reasons, sizing and fit, refunds, exchanges and store credit, per Store and period, using your Returnista account.",
+  "shortDescription": "Answer questions about your returns",
+  "author": { "name": "Returnista", "url": "https://www.returnista.com" },
+  "homepage": "https://github.com/returnista/ai-plugin",
+  "repository": "https://github.com/returnista/ai-plugin",
+  "license": "MIT",
+  "keywords": ["returns", "ecommerce", "returnista", "analytics"],
+  "category": "Productivity",
+  "links": {
+    "documentationUrl": "https://github.com/returnista/ai-plugin#readme",
+    "supportUrl": "https://www.returnista.nl/en/contact",
+    "privacyPolicyUrl": "https://www.returnista.nl/en/privacy",
+    "termsOfServiceUrl": "https://www.returnista.nl/en/terms-and-conditions"
+  },
+  "mcp": {
+    "serverName": "returnista",
+    "url": "https://mcp.returnista.com/mcp"
+  },
+  "examplePrompts": [
+    "Give me an overview of last week's returns per Store",
+    "What are the top return reasons per category this month?",
+    "Which products run small or large, and in which sizes?"
+  ]
+}
