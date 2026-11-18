@@ -18,6 +18,7 @@ This repository packages the Returnista connector (the remote MCP server built i
 ## Rules
 
 - Edit skills only in `skills/`, then run `node ci/generate-providers.mjs` and commit `providers/` with the change. CI fails when they drift.
+- A test copy or fork of this repository builds with its own URL: `PLUGIN_REPOSITORY=https://github.com/<owner>/<repo> node ci/generate-providers.mjs`, then commit. That copy's CI sets the same variable to the repository it runs in, so it checks against its own URL. Before pushing to `returnista/ai-plugin`, run the generator without it.
 - Change the version, links or connector URL only in `plugin.config.json`. The connector URL must stay exactly the one in Returnista's connector directory listing, so people with both see one set of tools.
 - Never put a token, API key or `Authorization` header in the repository: the connector signs in with OAuth. The validator scans for them.
 - No top-level `bin/` in a plugin: claude.ai and Cowork refuse to install it.

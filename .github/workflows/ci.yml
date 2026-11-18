@@ -17,8 +17,11 @@ jobs:
         with:
           node-version: 22
 
-      # providers/ must be exactly what the generator makes from skills/ and plugin.config.json.
+      # providers/ must be exactly what the generator makes from skills/ and plugin.config.json, for the repository
+      # this runs in: a test copy commits files built with its own URL (PLUGIN_REPOSITORY, see ci/generate-providers.mjs).
       - name: Providers are generated and committed
+        env:
+          PLUGIN_REPOSITORY: https://github.com/${{ github.repository }}
         run: |
           node ci/generate-providers.mjs
           git diff --exit-code -- providers .mcp.json .claude-plugin .agents || {

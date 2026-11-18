@@ -92,7 +92,7 @@ claude plugin validate --strict providers/claude/plugin
 claude plugin validate --strict .
 ```
 
-Test locally with `claude --plugin-dir providers/claude/plugin`. The eval cases and how to run them are in [evals/README.md](evals/README.md); how this repository is put together is in [AGENTS.md](AGENTS.md).
+Test locally with `claude --plugin-dir providers/claude/plugin`. To install from a test copy or fork on GitHub, build it for that copy's URL first, so the Codex marketplace points at it: `PLUGIN_REPOSITORY=https://github.com/<owner>/<repo> node ci/generate-providers.mjs`. The eval cases and how to run them are in [evals/README.md](evals/README.md); how this repository is put together is in [AGENTS.md](AGENTS.md).
 
 ## License
 

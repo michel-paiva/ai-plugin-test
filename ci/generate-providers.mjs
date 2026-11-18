@@ -6,6 +6,13 @@
 //   node ci/generate-providers.mjs           write the files
 //   node ci/generate-providers.mjs --check   write nothing; exit 1 if any file differs
 //
+// To build for another copy of this repository (a test repo or a fork), set PLUGIN_REPOSITORY to its GitHub URL:
+//
+//   PLUGIN_REPOSITORY=https://github.com/<owner>/<repo> node ci/generate-providers.mjs
+//
+// It replaces plugin.config.json's repository URL everywhere it appears (repository, homepage, links, the Codex
+// marketplace source, the install line), so that copy installs from itself. CI sets it to the repository it runs in.
+//
 // No dependencies: Node 22 or later.
 
 import { createHash } from 'node:crypto'
@@ -16,8 +23,25 @@ import { fileURLToPath } from 'node:url'
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 const CHECK = process.argv.includes('--check')
 
-const config = JSON.parse(readFileSync(join(ROOT, 'plugin.config.json'), 'utf8'))
+const config = withRepository(JSON.parse(readFileSync(join(ROOT, 'plugin.config.json'), 'utf8')), process.env.PLUGIN_REPOSITORY)
 const { name, displayName, version, description, shortDescription, author, homepage, repository, license, keywords, category, links, mcp, examplePrompts } = config
+
+/** The config with every URL under its repository moved to `override` (a GitHub repository URL), if one is given. */
+function withRepository(config, override) {
+  if (!override) return config
+  const target = override.replace(/\.git$/, '').replace(/\/+$/, '')
+  if (!/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+$/.test(target)) {
+    console.error(`PLUGIN_REPOSITORY must look like https://github.com/<owner>/<repo>, not "${override}"`)
+    process.exit(1)
+  }
+  const move = url => (typeof url === 'string' && url.startsWith(config.repository) ? target + url.slice(config.repository.length) : url)
+  return {
+    ...config,
+    repository: target,
+    homepage: move(config.homepage),
+    links: Object.fromEntries(Object.entries(config.links).map(([key, url]) => [key, move(url)])),
+  }
+}
 
 const AGENT_PLUGINS_SCHEMA = 'https://agent-plugins.org/schemas/1.0.0/plugin.schema.json'
 const AGENT_PLUGINS_MCP_SCHEMA = 'https://agent-plugins.org/schemas/1.0.0/mcp.schema.json'
@@ -185,9 +209,9 @@ function main() {
       console.error('Run `node ci/generate-providers.mjs` and commit the result.')
       process.exit(1)
     }
-    console.log(`generate-providers: ${files.size} files up to date`)
+    console.log(`generate-providers: ${files.size} files up to date for ${repository}`)
   } else {
-    console.log(`generate-providers: wrote ${files.size} files for ${name} ${version}`)
+    console.log(`generate-providers: wrote ${files.size} files for ${name} ${version}, installing from ${repository}`)
   }
 }
 
