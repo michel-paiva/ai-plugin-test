@@ -5,7 +5,7 @@ Ask about your returns in plain language: return reasons, sizing and fit, refund
 Install in Claude Code:
 
 ```
-/plugin install returnista --marketplace returnista/ai-plugin
+/plugin install returnista --marketplace michel-paiva/ai-plugin-test
 ```
 
 Then sign in to Returnista when asked (`/mcp`, choose returnista, Authenticate).

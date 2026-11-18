@@ -8,7 +8,7 @@
       "name": "returnista",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/returnista/ai-plugin.git",
+        "url": "https://github.com/michel-paiva/ai-plugin-test.git",
         "path": "providers/agent-plugins/plugin",
         "ref": "main"
       },

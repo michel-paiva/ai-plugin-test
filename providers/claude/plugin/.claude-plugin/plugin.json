@@ -7,8 +7,8 @@
     "name": "Returnista",
     "url": "https://www.returnista.com"
   },
-  "homepage": "https://github.com/returnista/ai-plugin",
-  "repository": "https://github.com/returnista/ai-plugin",
+  "homepage": "https://github.com/michel-paiva/ai-plugin-test",
+  "repository": "https://github.com/michel-paiva/ai-plugin-test",
   "license": "MIT",
   "keywords": [
     "returns",
@@ -17,7 +17,7 @@
     "analytics"
   ],
   "icon": "./.claude-plugin/icon.png",
-  "documentationUrl": "https://github.com/returnista/ai-plugin#readme",
+  "documentationUrl": "https://github.com/michel-paiva/ai-plugin-test#readme",
   "supportUrl": "https://www.returnista.nl/en/contact",
   "privacyPolicyUrl": "https://www.returnista.nl/en/privacy",
   "termsOfServiceUrl": "https://www.returnista.nl/en/terms-and-conditions"
